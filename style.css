@@ -31,7 +31,7 @@ header {
     align-items: center;
     background: #fff;
     border-bottom: 1px solid #eee;
-    position: sticky;
+    position: justify-content: space-between;
     top: 0;
     z-index: 1000;
     padding-top: 12px;
@@ -43,12 +43,23 @@ header {
 nav a {
     text-decoration: none;
     color: #222;
-    margin-left: 20px;
-    font-size: 13px;
+    margin-left: 45px;
+    font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+.logo img { 
+    height: 40px; 
+    width: 40px; 
+    pointer-events: none; /* Stops the image from being 'opened' as a file */
+    display: block; 
+}
 
+.logo {
+    display: flex;
+    align-items: justify-content: center;
+    text-decoration: none;
+}
 /* --- 3. Hero (The Exception) --- */
 #hero {
     width: 100%;
