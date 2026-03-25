@@ -112,7 +112,39 @@ nav a {
         column-count: 3;
     }
 }
+@media (max-width: 768px) {
+    /* 1. Reset Header Padding */
+    header {
+        padding: 15px; /* Forces the logo to the exact 5% line */
+        flex-direction: row ;/* Stacks menu under logo for a cleaner look */
+        align-items: center; /* Aligns everything to the LEFT margin */
+        gap: 10px;
+    }
 
+    /* 2. Fix the Logo Position */
+    .logo {
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .logo img {
+        height: 40px; /* Slightly smaller for mobile screens */
+    }
+
+    /* 3. Align the Navigation Links */
+    nav {
+        display: flex;
+        flex-wrap: wrap; /* Allows links to wrap if the phone is very narrow */
+        gap: 15px;
+        margin-left: 0;
+    }
+
+    nav a {
+        margin-left: 0; /* Removes the desktop 'spacer' margin */
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+}
 /* On Mobile (Phones) */
 @media (max-width: 768px) {
     .masonry-gallery {
