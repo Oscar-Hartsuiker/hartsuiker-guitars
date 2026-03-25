@@ -134,7 +134,7 @@ nav a {
     border-bottom: 2px solid #333;
 }
 
-./* --- 1. The Masonry Container --- */
+/* --- 1. The Masonry Container --- */
 .masonry-gallery {
     /* This creates the vertical "weaving" columns */
     column-count: 4; 
