@@ -31,7 +31,7 @@ header {
     align-items: center;
     background: #fff;
     border-bottom: 1px solid #eee;
-    position: justify-content: space-between;
+    position: space-between;
     top: 0;
     z-index: 1000;
     padding-top: 12px;
@@ -57,7 +57,7 @@ nav a {
 
 .logo {
     display: flex;
-    align-items: justify-content: center;
+    align-items: center;
     text-decoration: none;
 }
 /* --- 3. Hero (The Exception) --- */
