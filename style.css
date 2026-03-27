@@ -38,7 +38,7 @@ header {
     padding-bottom: 12px;
 }
 
-.logo img { height: 40px; width: 40px; }
+.logo img { height: 40px; width: 40px; border-radius: 50%; }
 
 nav a {
     text-decoration: none;
