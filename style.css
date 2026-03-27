@@ -27,6 +27,7 @@ section { padding-top: 80px; padding-bottom: 80px; }
 /* --- 2. Header & Logo --- */
 header {
     display: flex;
+    gap: 20px;
     justify-content: space-between;
     align-items: center;
     background: #fff;
@@ -115,10 +116,10 @@ nav a {
 @media (max-width: 768px) {
     /* 1. Reset Header Padding */
     header {
-        padding: 15px; /* Forces the logo to the exact 5% line */
-        flex-direction: row ;/* Stacks menu under logo for a cleaner look */
+        padding: 8px; /* Forces the logo to the exact 5% line */
+        flex-direction: grid ;/* Stacks menu under logo for a cleaner look */
         align-items: center; /* Aligns everything to the LEFT margin */
-        gap: 10px;
+        gap: 20px;
     }
 
     /* 2. Fix the Logo Position */
