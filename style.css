@@ -116,11 +116,20 @@ nav a {
 @media (max-width: 768px) {
     /* 1. Reset Header Padding */
     header {
-        padding: 8px; /* Forces the logo to the exact 5% line */
-        flex-direction: grid ;/* Stacks menu under logo for a cleaner look */
-        align-items: center; /* Aligns everything to the LEFT margin */
+        padding: 10px; /* Forces the logo to the exact 5% line */
+        flex-direction: row ;/* Stacks menu under logo for a cleaner look */
+        align-items: space-between; /* Aligns everything to the LEFT margin */
         gap: 20px;
     }
+
+    nav a {
+    text-decoration: none;
+    color: #222;
+    margin-left: 45px;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: auto;
+}
 
     /* 2. Fix the Logo Position */
     .logo {
@@ -129,7 +138,8 @@ nav a {
     }
 
     .logo img {
-        height: 40px; /* Slightly smaller for mobile screens */
+        height: 30px; /* Slightly smaller for mobile screens */
+        width: 30px;
     }
 
     /* 3. Align the Navigation Links */
@@ -142,7 +152,7 @@ nav a {
 
     nav a {
         margin-left: 0; /* Removes the desktop 'spacer' margin */
-        font-size: 11px;
+        font-size: 10; /* Allows font size to adjust naturally */
         letter-spacing: 1px;
     }
 }
