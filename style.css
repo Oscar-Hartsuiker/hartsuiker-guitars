@@ -116,10 +116,10 @@ nav a {
 @media (max-width: 768px) {
     /* 1. Reset Header Padding */
     header {
-        padding: 10px; /* Forces the logo to the exact 5% line */
+        padding: 8px; /* Forces the logo to the exact 5% line */
         flex-direction: row ;/* Stacks menu under logo for a cleaner look */
-        align-items: space-between; /* Aligns everything to the LEFT margin */
-        gap: 20px;
+        align-items: space-evenly; /* Aligns everything to the LEFT margin */
+        gap: 5px;
     }
 
     nav a {
