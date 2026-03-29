@@ -78,7 +78,8 @@ nav a {
 .grid-container {
     display: grid;
    
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-auto-columns: auto;
     gap: 10px;
 }
 
@@ -86,13 +87,6 @@ nav a {
 
 
 
-/* --- 3. Responsive Breakpoints --- */
-/* On Tablets (e.g., iPad) */
-@media (max-width: 1024px) {
-    .masonry-gallery {
-        column-count: 3;
-    }
-}
 @media (max-width: 768px) {
     /* 1. Reset Header Padding */
     header {
@@ -141,30 +135,26 @@ nav a {
 .card {
     padding: 25px;
     background: #f9f9f9;
-    border: 1px solid #eee; border-radius: 10px;
+    border: 1px solid #eee; 
+    border-radius: 10px;
 }
 
 .card img {
     width: 100%;
-    height: 100px;
+    height: auto;
     object-fit: contain;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-/* --- 5. OHT Build Gallery (Fixed Alignment) --- */
-.build-header {
-    margin-bottom: 30px;
-    padding: 0; /* Removed the extra padding that caused the shift */
-    border-bottom: 2px solid #333;
-}
+
 
 /* --- 1. The Masonry Container --- */
 .masonry-gallery {
     /* This creates the vertical "weaving" columns */
-    column-count: 4; 
+    column-count: 5; /* Automatically fills the available space with as many columns as possible */
     column-gap: 10px;
-    width: 100%;
-    padding: 20px 0px;
+    width: auto;
+    padding: 0px 0px;
 }
 
 /* --- 2. The Image "Bricks" --- */
@@ -175,7 +165,7 @@ nav a {
     margin-bottom: 10px; /* Spacing between "bricks" in a column */
 
     /* Prevents an image from being split across two columns */
-    break-inside: auto; 
+    break-inside: allow; 
     
     /* Your existing aesthetic */
     border: 1px solid #eee;
