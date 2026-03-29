@@ -82,36 +82,8 @@ nav a {
 }
 
 
-/* --- 1. The Masonry Container --- */
-.masonry-gallery {
-    /* This creates the vertical "weaving" columns */
-    column-count: 4; 
-    column-gap: 10px;
-    width: 100%;
-    padding: 1px 0;
-}
 
-/* --- 2. The Image "Bricks" --- */
-.masonry-gallery img {
-    width: 100%;
-    height: auto; /* CRITICAL: Allows height to be natural, not cropped */
-    display: block;
-    margin-bottom: 15px; /* Spacing between "bricks" in a column */
-    
-    /* Prevents an image from being split across two columns */
-    break-inside: avoid; 
-    
-    /* Your existing aesthetic */
-    border: 1px solid #eee;
-    border-radius: 4px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    cursor: pointer;
-}
 
-.masonry-gallery img:hover {
-    transform: scale(1.02);
-    opacity: 0.9;
-}
 
 /* --- 3. Responsive Breakpoints --- */
 /* On Tablets (e.g., iPad) */
@@ -189,9 +161,9 @@ nav a {
 .masonry-gallery {
     /* This creates the vertical "weaving" columns */
     column-count: 4; 
-    column-gap: 0px;
+    column-gap: 10px;
     width: 100%;
-    padding: 20px 0;
+    padding: 20px 0px;
 }
 
 /* --- 2. The Image "Bricks" --- */
@@ -200,9 +172,9 @@ nav a {
     height: auto; /* CRITICAL: Allows height to be natural, not cropped */
     display: block;
     margin-bottom: 10px; /* Spacing between "bricks" in a column */
-    
+
     /* Prevents an image from being split across two columns */
-    break-inside: avoid; 
+    break-inside: auto; 
     
     /* Your existing aesthetic */
     border: 1px solid #eee;
