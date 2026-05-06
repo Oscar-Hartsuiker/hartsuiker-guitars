@@ -6,7 +6,8 @@
     <meta name="google-site-verification" content="5E_QNmzbziISJs8mHNzKmlek4BEHWeAhGdPVd0eVUvo" />
     <title>Hartsuiker Guitars</title>
     <link rel="stylesheet" href="style.css">
-    
+    <!-- ADDED: Preload hero image for faster LCP -->
+    <link rel="preload" as="image" href="hero-guitar.webp">
 </head>
 <body>
 <header>
@@ -16,7 +17,6 @@
     <nav>
         <a href="#about">Philosophy</a>
         <a href="#guitars">Guitars</a>
-        <a href="#gallery">Gallery</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
@@ -35,135 +35,97 @@
 
 
 
-    <section id="guitars">
-    <h2>Instruments</h2>
-    <div class="grid-container">
-        <div class="card">
-            <h3>The Spiral Bass</h3>
-            <p>A custom solid-body bass featuring hand-carved ergonomic scrolls, a multi-laminate neck, and a split-coil configuration.</p>
-            <div class="masonry-gallery">
-                <img src="images/swirlbass/swirlbass_0000.avif" alt="Front Close Up">
-                <img src="images/swirlbass/swirlbasscloseupbody.webp" alt="Front Close Up">
-                <img src="images/swirlbass/swirlbass_0010.avif" alt="Back carving">
-        </div>
-    </div>
-        <div class="card">
-            <h3>The Esquire Series</h3>
-            <p>A classic T-style design with a focus on simplicity and functionality.</p>
-            <div class="masonry-gallery">
-                <img src="images/oht-26001/IMG_20260129_175447_975.webp" alt="Headstock Design">
-                <img src="images/oht-26002/oht-26002-004.webp" alt="Full Front">
-                <img src="images/square/2-web-1.1_08.avif" alt="Full Front">
-                 <img src="images/oht-26001/bowtie.webp" alt="Cypress Esquire Body">
-                 <img src="images/oht-26002/oht-26002-001.webp" alt="OHT-26002 Full Front">
-            </div>
-           
-        </div>
-
-        <div class="card">
-            
-            <h3>The Skeleton Series</h3>
-            <p>A modern, ergonomic solid-body design featuring a traditional headstock and high-performance contours. Currently in development stage.</p>
-            <div class="masonry-gallery">
-            <img src="images/skeleton drawing.webp" alt="Skeleton Series Sketch">
-        </div>
-    </div> </section>
-
-<section id="gallery">
-    <h2>Gallery</h2>
+<section id="guitars">
+    <h2>Guitars</h2>
     <p>Explore our latest builds and projects.</p>
-<section id="oht-26002">
+
+<!-- CHANGED: Using <article> instead of nested <section> for build entries -->
+<article id="oht-26002">
     <div class="build-header">
-        <h2>Build OHT-26002</h2>
+        <h3>Build OHT-26002</h2>
         <p><em>Reclaimed Oregon Pine | Pau Marfim | Black Hardware</em></p>
     </div>
     <div class="masonry-gallery">
-            <img src="images/oht-26002/oht-26002-001.webp" alt="Front">
-            <img src="images/oht-26002/oht-26002-002.webp" alt="Back Detail">
-            <img src="images/oht-26002/oht-26002-003.webp" alt="Body Detail - Back">
-            <img src="images/oht-26002/oht-26002-004.webp" alt="Full Front">
-            <img src="images/oht-26002/oht-26002-005.webp" alt="Body Front Detail">
-            <img src="images/oht-26002/oht-26002-006.webp" alt="Heal Joint & Contour">
-            <img src="images/oht-26002/oht-26002-007.webp" alt="Headstock Detail">
-            <img src="images/oht-26002/oht-26002-008.webp" alt="Full Front">
-            <img src="images/oht-26002/oht-26002-009.webp" alt="Back Detail">
-            <img src="images/oht-26002/oht-26002-010.webp" alt="Back Full">
+            <img src="images/oht-26002/oht-26002-001.webp" alt="Front" loading="lazy">
+            <img src="images/oht-26002/oht-26002-002.webp" alt="Back Detail" loading="lazy">
+            <img src="images/oht-26002/oht-26002-003.webp" alt="Body Detail - Back" loading="lazy">
+            <img src="images/oht-26002/oht-26002-004.webp" alt="Full Front" loading="lazy">
+            <img src="images/oht-26002/oht-26002-005.webp" alt="Body Front Detail" loading="lazy">
+            <img src="images/oht-26002/oht-26002-006.webp" alt="Heel Joint &amp; Contour" loading="lazy">
+            <img src="images/oht-26002/oht-26002-007.webp" alt="Headstock Detail" loading="lazy">
+            <img src="images/oht-26002/oht-26002-008.webp" alt="Full Front" loading="lazy">
+            <img src="images/oht-26002/oht-26002-009.webp" alt="Back Detail" loading="lazy">
+            <img src="images/oht-26002/oht-26002-010.webp" alt="Back Full" loading="lazy">
         </div>
-</section>
+</article>
    
-   <section id="oht-26001">
+<article id="oht-26001">
     <div class="build-header">
-        <h2>Build OHT-26001</h2>
+        <h3>Build OHT-26001</h3>
         <p><em>Cypress | Pau Marfim | Chrome Hardware</em></p>
     </div>
     <div class="masonry-gallery">
-          
-            <img src="images/oht-26001/1-web_01.avif" alt="Full Front">
-            <img src="images/oht-26001/1-web_02.avif" alt="Body Detail - Front">
-            <img src="images/oht-26001/1-web_04.avif" alt="Back">
-            <img src="images/oht-26001/1-web_05.avif" alt="Back">
-            <img src="images/oht-26001/1-web_06.avif" alt="Full Back">
-            <img src="images/oht-26001/1-web_07.avif" alt="Headstock Detail - Back">
-            <img src="images/oht-26001/1-web_08.avif" alt="Heal Joint & Contour">
-            <img src="images/oht-26001/1-web_09.avif" alt="Back Detail">
-            <img src="images/oht-26001/1-web_10.avif" alt="Front Detail">
-            <img src="images/oht-26001/1-web_11.avif" alt="Front Detail">
-            <img src="images/oht-26001/1-web_12.avif" alt="Bowtie inlay Detail">
-            <img src="images/oht-26001/1-web_13.avif" alt="Bowtie inlay Detail">
-            <img src="images/oht-26001/1-web_14.avif" alt="Fretboard end Detail">
-            <img src="images/oht-26001/1-web_15.avif" alt="Fretboard end Detail 2">
-            <img src="images/oht-26001/1-web_16.avif" alt="Inlay Detail - Front">  
-            <img src="images/oht-26001/1-web_17.avif" alt="Inlay Detail - Close up"> 
-            <img src="images/oht-26001/1-web_18.avif" alt="Headstock Detail">
-            <img src="images/oht-26001/1-web_19.avif" alt="Body Detail - Front"> 
-            <img src="images/oht-26001/1-web_20.avif" alt="Body Detail - Front">
-            <img src="images/oht-26001/1-web_21.avif" alt="Body Detail - Front">
-            <img src="images/oht-26001/1-web_22.avif" alt="Body Detail Jack Close up">   
-        
+            <img src="images/oht-26001/1-web_01.avif" alt="Full Front" loading="lazy">
+            <img src="images/oht-26001/1-web_02.avif" alt="Body Detail - Front" loading="lazy">
+            <img src="images/oht-26001/1-web_04.avif" alt="Back" loading="lazy">
+            <img src="images/oht-26001/1-web_05.avif" alt="Back" loading="lazy">
+            <img src="images/oht-26001/1-web_06.avif" alt="Full Back" loading="lazy">
+            <img src="images/oht-26001/1-web_07.avif" alt="Headstock Detail - Back" loading="lazy">
+            <!-- FIXED: "Heal" -> "Heel" (correct guitar anatomy term) -->
+            <img src="images/oht-26001/1-web_08.avif" alt="Heel Joint &amp; Contour" loading="lazy">
+            <img src="images/oht-26001/1-web_09.avif" alt="Back Detail" loading="lazy">
+            <img src="images/oht-26001/1-web_10.avif" alt="Front Detail" loading="lazy">
+            <img src="images/oht-26001/1-web_11.avif" alt="Front Detail" loading="lazy">
+            <img src="images/oht-26001/1-web_12.avif" alt="Bowtie Inlay Detail" loading="lazy">
+            <img src="images/oht-26001/1-web_13.avif" alt="Bowtie Inlay Detail" loading="lazy">
+            <img src="images/oht-26001/1-web_14.avif" alt="Fretboard End Detail" loading="lazy">
+            <img src="images/oht-26001/1-web_15.avif" alt="Fretboard End Detail 2" loading="lazy">
+            <img src="images/oht-26001/1-web_16.avif" alt="Inlay Detail - Front" loading="lazy">
+            <img src="images/oht-26001/1-web_17.avif" alt="Inlay Detail - Close Up" loading="lazy">
+            <img src="images/oht-26001/1-web_18.avif" alt="Headstock Detail" loading="lazy">
+            <img src="images/oht-26001/1-web_19.avif" alt="Body Detail - Front" loading="lazy">
+            <img src="images/oht-26001/1-web_20.avif" alt="Body Detail - Front" loading="lazy">
+            <img src="images/oht-26001/1-web_21.avif" alt="Body Detail - Front" loading="lazy">
+            <img src="images/oht-26001/1-web_22.avif" alt="Body Detail Jack Close Up" loading="lazy">
         </div>
-    </section>
-    <section id="swirlbass">
+</article>
+
+<article id="swirlbass">
     <div class="build-header">
-        <h2>Spiral Bass</h2>
+        <h3>Spiral Bass</h3>
         <p><em>Made entirely from reclaimed wood with a natural shellac finish.</em></p>
     </div>
     <div class="masonry-gallery">
-            <img src="images/swirlbass/swirlbasscloseupbody.webp" alt="Front Close Up">
-            <img src="images/swirlbass/swirlbass_0000.avif" alt="Front Close Up">
-            <img src="images/swirlbass/swirlbass_0001.avif" alt="Work Desk">
-            <img src="images/swirlbass/swirlbass_0003.avif" alt="Neck bocks">
-            <img src="images/swirlbass/swirlbass_0004.avif" alt="Inlay under lamp">
-            <img src="images/swirlbass/swirlbass_0005.avif" alt="Inlay under lamp">
-            <img src="images/swirlbass/swirlbass_0006.avif" alt="Neck inlay carving wide">
-            <img src="images/swirlbass/swirlbass_0007.avif" alt="Neck inlay carving">
-            <img src="images/swirlbass/swirlbass_0008.avif" alt="Neck Inlays">
-            <img src="images/swirlbass/swirlbass_0009.avif" alt="Unfinshd scratchplate">
-            <img src="images/swirlbass/swirlbass_0010.avif" alt="Full back unfineshed">
-            <img src="images/swirlbass/swirlbass_0011.avif" alt="Fretboard inlay workshot">
-        
+            <img src="images/swirlbass/swirlbasscloseupbody.webp" alt="Front Close Up" loading="lazy">
+            <img src="images/swirlbass/swirlbass_0000.avif" alt="Front Close Up" loading="lazy">
+            <img src="images/swirlbass/swirlbass_0001.avif" alt="Work Desk" loading="lazy">
+            <img src="images/swirlbass/swirlbass_0003.avif" alt="Neck Blocks" loading="lazy">
+            <img src="images/swirlbass/swirlbass_0004.avif" alt="Inlay Under Lamp" loading="lazy">
+            <img src="images/swirlbass/swirlbass_0005.avif" alt="Inlay Under Lamp" loading="lazy">
+            <img src="images/swirlbass/swirlbass_0006.avif" alt="Neck Inlay Carving Wide" loading="lazy">
+            <img src="images/swirlbass/swirlbass_0007.avif" alt="Neck Inlay Carving" loading="lazy">
+            <img src="images/swirlbass/swirlbass_0008.avif" alt="Neck Inlays" loading="lazy">
+            <img src="images/swirlbass/swirlbass_0009.avif" alt="Unfinished Scratchplate" loading="lazy">
+            <img src="images/swirlbass/swirlbass_0010.avif" alt="Full Back Unfinished" loading="lazy">
+            <img src="images/swirlbass/swirlbass_0011.avif" alt="Fretboard Inlay Work Shot" loading="lazy">
         </div>
-    </section>       
-        
-        
-      
+</article>
+
+</section>
 
     <footer id="contact">
-       
-        <p>For inquiries about, builds, Setups or Repairs Contact:</p>
+        <p>For inquiries about builds, setups or repairs contact:</p>
         <p><strong>Oscar Hartsuiker</strong></p>
-       
-
         <p><strong>066 498 6343</strong></p>
         <p><strong>hartsuikerguitar@gmail.com</strong></p>
-         <div class="social-container">
-        <a href="https://www.facebook.com/profile.php?id=61582473382094" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-    <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-    </a>
-
-    <a href="https://www.instagram.com/hartsuiker_guitar/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-    </a>
-    </div>
+        <div class="social-container">
+            <a href="https://www.facebook.com/profile.php?id=61582473382094" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://www.instagram.com/hartsuiker_guitar/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+        </div>
     </footer>
 
     <div id="lightbox" class="lightbox">
@@ -172,13 +134,13 @@
     </div>
 
     <script>
-        const images = document.querySelectorAll('img');
+        // FIXED: Scoped to gallery images only — logo no longer triggers lightbox
+        const images = document.querySelectorAll('.masonry-gallery img, .card-gallery img');
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const closeBtn = document.querySelector('.close');
 
         images.forEach(img => {
-            img.style.cursor = 'pointer';
             img.addEventListener('click', () => {
                 lightbox.classList.add('active');
                 lightboxImg.src = img.src;
@@ -192,6 +154,13 @@
 
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        // ADDED: Close lightbox with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
                 lightbox.classList.remove('active');
             }
         });

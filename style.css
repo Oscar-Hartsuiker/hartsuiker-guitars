@@ -13,7 +13,7 @@ body {
     color: #222;
 }
 
-/* --- 1. The Master Margin (5% Everywhere) --- */
+/* --- 1. Master Margin (5% Everywhere) --- */
 header, 
 footer, 
 section:not(#hero) {
@@ -21,6 +21,15 @@ section:not(#hero) {
     padding-right: 5%;
 }
 
+.build-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+#guitars > p {
+    margin-bottom: 24px;
+}
 /* Vertical spacing only */
 section { padding-top: 80px; padding-bottom: 80px; }
 
@@ -39,7 +48,20 @@ header {
     padding-bottom: 12px;
 }
 
-.logo img { height: 40px; width: 40px; border-radius: 50%; }
+/* FIXED: Merged duplicate .logo img rules into one */
+.logo img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    pointer-events: none;
+    display: block;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
 
 nav a {
     text-decoration: none;
@@ -49,24 +71,14 @@ nav a {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-.logo img { 
-    height: 40px; 
-    width: 40px; 
-    pointer-events: none; /* Stops the image from being 'opened' as a file */
-    display: block; 
-}
 
-.logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-/* --- 3. Hero (The Exception) --- */
+/* --- 3. Hero (Edge to Edge) --- */
 #hero {
     width: 100%;
     height: 95vh;
-    padding: 0; /* Edge to edge */
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-guitar.webp') center/cover fixed;
+    padding: 0;
+    /* CHANGED: Removed 'fixed' parallax — GPU-expensive & broken on mobile */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-guitar.webp') center/cover scroll;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,100 +86,93 @@ nav a {
     text-align: center;
 }
 
-/* --- 4. Instruments Grid (Original Sizing) --- */
-.grid-container {
-    display: grid;
-   
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-auto-columns: auto;
-    gap: 10pxS
-}
-
-
-
-
-
+/* --- 4. Mobile --- */
 @media (max-width: 768px) {
-    /* 1. Reset Header Padding */
     header {
-        padding: 8px; /* Forces the logo to the exact 5% line */
-        flex-direction: row ;/* Stacks menu under logo for a cleaner look */
-        align-items: space-evenly; /* Aligns everything to the LEFT margin */
+        padding: 8px;
+        flex-direction: row;
+        /* FIXED: align-items only accepts flex values; removed invalid 'space-evenly' */
+        align-items: center;
         gap: 5px;
     }
 
-    nav a {
-    text-decoration: none;
-    color: #222;
-    margin-left: 45px;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: auto;
-}
-
-    /* 2. Fix the Logo Position */
     .logo {
         margin-left: 0;
         padding-left: 0;
     }
 
     .logo img {
-        height: 30px; /* Slightly smaller for mobile screens */
+        height: 30px;
         width: 30px;
     }
 
-    /* 3. Align the Navigation Links */
     nav {
         display: flex;
-        flex-wrap: wrap; /* Allows links to wrap if the phone is very narrow */
+        flex-wrap: wrap;
         gap: 15px;
         margin-left: 0;
     }
 
     nav a {
-        margin-left: 0; /* Removes the desktop 'spacer' margin */
-        font-size: 10; /* Allows font size to adjust naturally */
+        margin-left: 0;
+        /* FIXED: Added missing 'px' unit */
+        font-size: 10px;
         letter-spacing: 1px;
     }
 }
 
+/* --- 5. Instruments Grid --- */
+.grid-container {
+    display: grid;
+    /* FIXED: Removed invalid 'column-count: auto' (CSS Grid property, not Columns)
+       and fixed typo '10pxS' -> '10px' */
+    gap: 10px;
+}
 
-.card {
+.guitar-card {
     padding: 25px;
     background: #f9f9f9;
-    border: 1px solid #eee; 
+    border: 1px solid #eee;
     border-radius: 10px;
 }
 
-.card img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    margin-bottom: 10px;
-}
-
-
-
-/* --- 1. The Masonry Container --- */
-.masonry-gallery {
-    /* This creates the vertical "weaving" columns */
-    column-count: 5; /* Automatically fills the available space with as many columns as possible */
+/* --- 6. Card Gallery (Instruments section) --- */
+.card-gallery {
+    column-count: auto;
     column-gap: 10px;
-    width: auto;
-    padding: 0px 0px;
 }
 
-/* --- 2. The Image "Bricks" --- */
+/* MOVED cursor to CSS instead of JS for efficiency */
+.card-gallery img {
+    width: auto;
+    height: 100px;
+    display: block;
+    margin-bottom: 10px;
+    break-inside: avoid;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.card-gallery img:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+/* --- 7. Masonry Gallery --- */
+.masonry-gallery {
+    column-count: 5;
+    column-gap: 10px;
+}
+
+/* cursor already handled here in CSS */
 .masonry-gallery img {
     width: 100%;
-    height: auto; /* CRITICAL: Allows height to be natural, not cropped */
+    height: auto;
     display: block;
-    margin-bottom: 10px; /* Spacing between "bricks" in a column */
-
-    /* Prevents an image from being split across two columns */
-    break-inside: allow; 
-    
-    /* Your existing aesthetic */
+    margin-bottom: 10px;
+    break-inside: avoid;
     border: 1px solid #eee;
     border-radius: 4px;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -179,18 +184,16 @@ nav a {
     opacity: 0.9;
 }
 
-/* --- 3. Responsive Breakpoints --- */
-/* On Tablets (e.g., iPad) */
+/* Responsive breakpoints */
 @media (max-width: 1024px) {
     .masonry-gallery {
         column-count: 3;
     }
 }
 
-/* On Mobile (Phones) */
 @media (max-width: 768px) {
     .masonry-gallery {
-        column-count: 2; /* Keeps it from getting too skinny */
+        column-count: 2;
         column-gap: 10px;
     }
     .masonry-gallery img {
@@ -198,9 +201,7 @@ nav a {
     }
 }
 
-/* --- Lightbox & Footer --- */
-
-
+/* --- 8. Lightbox --- */
 .lightbox {
     display: none;
     position: fixed;
@@ -214,47 +215,33 @@ nav a {
 .lightbox-content { max-width: 90%; max-height: 90%; object-fit: contain; }
 .close { position: absolute; top: 15px; right: 35px; color: #fff; font-size: 40px; cursor: pointer; }
 
-
-
-CSS
+/* --- 9. Social Icons --- */
+/* FIXED: Removed stray bare word 'CSS' that was breaking all rules below it */
 .social-container {
-  display: flex;
-  gap: 80px;
-  justify-content: center; /* Centers icons horizontally */
-  padding: 80px 0;
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+    padding: 80px 0;
 }
 
 .social-container a {
-  color: #333; /* Icon color */
-  transition: opacity 0.2s ease;
-  text-decoration: none;
+    color: #333;
+    transition: opacity 0.2s ease;
+    text-decoration: none;
 }
 
 .social-container a:hover {
-  opacity: 0.7; /* Gentle fade on hover */
-}
-footer { 
-  background: #111; 
-  color: #aaa; 
-  text-align: center; 
-  padding: 80px 20px; /* 80px top/bottom, 20px sides */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px; /* Adds space between the copyright and the icons */
+    opacity: 0.7;
 }
 
-.footer-socials {
-  display: flex;
-  gap: 25px;
-  justify-content: center;
-}
-
-.footer-socials a {
-  color: #aaa; /* Matches your footer text color */
-  transition: color 0.3s ease;
-}
-
-.footer-socials a:hover {
-  color: #fff; /* Icons light up when hovered */
+/* --- 10. Footer --- */
+footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
