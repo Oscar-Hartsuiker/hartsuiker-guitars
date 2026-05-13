@@ -28,7 +28,7 @@
         <!-- LEFT: main image + masonry gallery -->
         <div class="listing-images">
             <div class="listing-hero">
-                <img src="../images/oht-26001/1-web_08.avif" alt="OHT-26001 Heel Joint & Contour" id="main-image">
+                
             </div>
             <div class="masonry-gallery">
                 <img src="../images/oht-26002/oht-26002-001.webp" alt="OHT-26002 Front" id="main-image">
@@ -143,6 +143,20 @@
         if (e.key === 'Escape') closeLightbox();
         if (e.key === 'ArrowRight') showNext();
         if (e.key === 'ArrowLeft') showPrev();
+    });
+    // Swipe support
+    let touchStartX = 0;
+
+    lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    });
+
+    lightbox.addEventListener('touchend', (e) => {
+    const diff = touchStartX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 40) {  // 40px threshold to avoid accidental swipes
+        if (diff > 0) showNext();
+        else showPrev();
+    }
     });
 </script>
 

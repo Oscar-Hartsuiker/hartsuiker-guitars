@@ -428,7 +428,13 @@ footer {
     align-items: center;
     gap: 12px;
 }
-
+@media (max-width: 768px) {
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 18px;
+        padding: 10px 12px;
+    }
+}
 /* ================================
    RESPONSIVE
    ================================ */
