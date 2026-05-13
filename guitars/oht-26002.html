@@ -28,9 +28,10 @@
         <!-- LEFT: main image + masonry gallery -->
         <div class="listing-images">
             <div class="listing-hero">
-                <img src="../images/oht-26002/oht-26002-001.webp" alt="OHT-26002 Front" id="main-image">
+                <img src="../images/oht-26001/1-web_08.avif" alt="OHT-26001 Heel Joint & Contour" id="main-image">
             </div>
             <div class="masonry-gallery">
+                <img src="../images/oht-26002/oht-26002-001.webp" alt="OHT-26002 Front" id="main-image">
                 <img src="../images/oht-26002/oht-26002-001.webp" alt="Front" loading="lazy">
                 <img src="../images/oht-26002/oht-26002-002.webp" alt="Back Detail" loading="lazy">
                 <img src="../images/oht-26002/oht-26002-003.webp" alt="Body Detail - Back" loading="lazy">
@@ -63,11 +64,10 @@
 
             <div class="listing-description">
                 <p>A  fantastic guitar featuring a solid reclaimed Oregon Pine body from an old workbench, a pau marfim neck, and black hardware. Finished with a natural oil finish to highlight the wood grain and feel.</p>
+                <a class="enquire-btn" href="mailto:hartsuikerguitar@gmail.com?subject=Enquiry: Build OHT-26002">
+                    Enquire about this guitar
+                </a>
             </div>
-
-            <a class="enquire-btn" href="mailto:hartsuikerguitar@gmail.com?subject=Enquiry: Build OHT-26002">
-                Enquire about this guitar
-            </a>
         </div>
 
     </div>
@@ -76,7 +76,10 @@
 <!-- Lightbox -->
 <div id="lightbox" class="lightbox">
     <span class="close">&times;</span>
+    <button class="lightbox-prev" aria-label="Previous">&#8592;</button>
     <img class="lightbox-content" id="lightbox-img" alt="">
+    <button class="lightbox-next" aria-label="Next">&#8594;</button>
+    <div class="lightbox-counter" id="lightbox-counter"></div>
 </div>
 
 <footer id="contact">
@@ -97,21 +100,50 @@
 <script>
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
+    const counter = document.getElementById('lightbox-counter');
+    let galleryImgs = [];
+    let currentIndex = 0;
 
-    function imgClickHandler() {
+    function openLightbox(index) {
+        currentIndex = index;
+        lightboxImg.src = galleryImgs[currentIndex].src;
+        lightboxImg.alt = galleryImgs[currentIndex].alt;
+        counter.textContent = (currentIndex + 1) + ' / ' + galleryImgs.length;
         lightbox.classList.add('active');
-        lightboxImg.src = this.src;
-        lightboxImg.alt = this.alt;
     }
 
-    document.querySelectorAll('.masonry-gallery img, .listing-hero img').forEach(img => {
+    function showNext() {
+        currentIndex = (currentIndex + 1) % galleryImgs.length;
+        openLightbox(currentIndex);
+    }
+
+    function showPrev() {
+        currentIndex = (currentIndex - 1 + galleryImgs.length) % galleryImgs.length;
+        openLightbox(currentIndex);
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+    }
+
+    // Collect all gallery images
+    galleryImgs = Array.from(document.querySelectorAll('.masonry-gallery img, .listing-hero img'));
+    galleryImgs.forEach((img, i) => {
         img.style.cursor = 'pointer';
-        img.addEventListener('click', imgClickHandler);
+        img.addEventListener('click', () => openLightbox(i));
     });
 
-    document.querySelector('.close').addEventListener('click', () => lightbox.classList.remove('active'));
-    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('active'); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lightbox.classList.remove('active'); });
+    document.querySelector('.close').addEventListener('click', closeLightbox);
+    document.querySelector('.lightbox-prev').addEventListener('click', showPrev);
+    document.querySelector('.lightbox-next').addEventListener('click', showNext);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') showNext();
+        if (e.key === 'ArrowLeft') showPrev();
+    });
 </script>
 
 </body>

@@ -50,7 +50,7 @@
                 <h1>Spiral Bass</h1>
                 <span class="status-badge for-sale">For Sale</span>
             </div>
-            <p class="listing-price">R 25,000</p>
+            <p class="listing-price">POA</p>
             <p class="listing-materials">Reclaimed Wood throughout · Natural Shellac Finish</p>
 
             <div class="listing-specs">
@@ -74,7 +74,10 @@
 
 <div id="lightbox" class="lightbox">
     <span class="close">&times;</span>
+    <button class="lightbox-prev" aria-label="Previous">&#8592;</button>
     <img class="lightbox-content" id="lightbox-img" alt="">
+    <button class="lightbox-next" aria-label="Next">&#8594;</button>
+    <div class="lightbox-counter" id="lightbox-counter"></div>
 </div>
 
 <footer id="contact">
@@ -95,21 +98,45 @@
 <script>
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
+    const counter = document.getElementById('lightbox-counter');
+    let galleryImgs = [];
+    let currentIndex = 0;
 
-    function imgClickHandler() {
+    function openLightbox(index) {
+        currentIndex = index;
+        lightboxImg.src = galleryImgs[currentIndex].src;
+        lightboxImg.alt = galleryImgs[currentIndex].alt;
+        counter.textContent = (currentIndex + 1) + ' / ' + galleryImgs.length;
         lightbox.classList.add('active');
-        lightboxImg.src = this.src;
-        lightboxImg.alt = this.alt;
     }
 
-    document.querySelectorAll('.masonry-gallery img, .listing-hero img').forEach(img => {
+    function showNext() {
+        currentIndex = (currentIndex + 1) % galleryImgs.length;
+        openLightbox(currentIndex);
+    }
+
+    function showPrev() {
+        currentIndex = (currentIndex - 1 + galleryImgs.length) % galleryImgs.length;
+        openLightbox(currentIndex);
+    }
+
+    function closeLightbox() { lightbox.classList.remove('active'); }
+
+    galleryImgs = Array.from(document.querySelectorAll('.masonry-gallery img, .listing-hero img'));
+    galleryImgs.forEach((img, i) => {
         img.style.cursor = 'pointer';
-        img.addEventListener('click', imgClickHandler);
+        img.addEventListener('click', () => openLightbox(i));
     });
 
-    document.querySelector('.close').addEventListener('click', () => lightbox.classList.remove('active'));
-    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('active'); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lightbox.classList.remove('active'); });
+    document.querySelector('.close').addEventListener('click', closeLightbox);
+    document.querySelector('.lightbox-prev').addEventListener('click', showPrev);
+    document.querySelector('.lightbox-next').addEventListener('click', showNext);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') showNext();
+        if (e.key === 'ArrowLeft') showPrev();
+    });
 </script>
 
 </body>
