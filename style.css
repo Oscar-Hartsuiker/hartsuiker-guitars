@@ -13,27 +13,18 @@ body {
     color: #222;
 }
 
-/* --- 1. Master Margin (5% Everywhere) --- */
-header, 
-footer, 
-section:not(#hero) {
+/* --- Master Margin --- */
+header,
+footer,
+section:not(#hero),
+.listing-page {
     padding-left: 5%;
     padding-right: 5%;
 }
 
-.build-header {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 24px;
-}
-#guitars > p {
-    margin-bottom: 24px;
-}
-/* Vertical spacing only */
 section { padding-top: 80px; padding-bottom: 80px; }
 
-/* --- 2. Header & Logo --- */
+/* --- Header & Logo --- */
 header {
     display: flex;
     gap: 20px;
@@ -48,7 +39,6 @@ header {
     padding-bottom: 12px;
 }
 
-/* FIXED: Merged duplicate .logo img rules into one */
 .logo img {
     height: 40px;
     width: 40px;
@@ -72,12 +62,11 @@ nav a {
     letter-spacing: 1px;
 }
 
-/* --- 3. Hero (Edge to Edge) --- */
+/* --- Hero Section --- */
 #hero {
     width: 100%;
     height: 95vh;
     padding: 0;
-    /* CHANGED: Removed 'fixed' parallax — GPU-expensive & broken on mobile */
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-guitar.webp') center/cover scroll;
     display: flex;
     justify-content: center;
@@ -86,97 +75,272 @@ nav a {
     text-align: center;
 }
 
-/* --- 4. Mobile --- */
-@media (max-width: 768px) {
-    header {
-        padding: 8px;
-        flex-direction: row;
-        /* FIXED: align-items only accepts flex values; removed invalid 'space-evenly' */
-        align-items: center;
-        gap: 5px;
-    }
-
-    .logo {
-        margin-left: 0;
-        padding-left: 0;
-    }
-
-    .logo img {
-        height: 30px;
-        width: 30px;
-    }
-
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        margin-left: 0;
-    }
-
-    nav a {
-        margin-left: 0;
-        /* FIXED: Added missing 'px' unit */
-        font-size: 10px;
-        letter-spacing: 1px;
-    }
+/* --- Section Intro --- */
+#guitars > p.section-intro {
+    margin-top: 8px;
+    margin-bottom: 40px;
+    color: #666;
+    font-size: 15px;
 }
 
-/* --- 5. Instruments Grid --- */
-.grid-container {
+/* ================================
+   PRODUCT GRID (index page)
+   ================================ */
+.product-grid {
     display: grid;
-    /* FIXED: Removed invalid 'column-count: auto' (CSS Grid property, not Columns)
-       and fixed typo '10pxS' -> '10px' */
-    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
 }
 
-.guitar-card {
-    padding: 25px;
-    background: #f9f9f9;
-    border: 1px solid #eee;
-    border-radius: 10px;
-}
-
-/* --- 6. Card Gallery (Instruments section) --- */
-.card-gallery {
-    column-count: auto;
-    column-gap: 10px;
-}
-
-/* MOVED cursor to CSS instead of JS for efficiency */
-.card-gallery img {
-    width: auto;
-    height: 100px;
+.product-thumb {
+    text-decoration: none;
+    color: #222;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
     display: block;
-    margin-bottom: 10px;
-    break-inside: avoid;
-    border: 1px solid #eee;
+}
+
+.product-thumb:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+}
+
+/* Square thumbnail image */
+.thumb-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.thumb-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.product-thumb:hover .thumb-image img {
+    transform: scale(1.04);
+}
+
+/* Card info row */
+.thumb-info {
+    padding: 14px 16px 16px;
+    border-top: 1px solid #eee;
+}
+
+.thumb-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.thumb-top h3 {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+}
+
+.price {
+    font-size: 13px;
+    color: #888;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Status badge — shared by grid and listing */
+.status-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 8px;
     border-radius: 4px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.status-badge.for-sale {
+    background: #222;
+    color: #fff;
+}
+
+.status-badge.sold {
+    background: #bbb;
+    color: #fff;
+}
+
+/* ================================
+   LISTING PAGE (individual guitar)
+   ================================ */
+.listing-page {
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+.back-link {
+    display: inline-block;
+    font-size: 13px;
+    color: #888;
+    text-decoration: none;
+    margin-bottom: 32px;
+    letter-spacing: 0.3px;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover { color: #222; }
+
+/* Two-column layout: images left, info right */
+.listing-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 48px;
+    align-items: start;
+}
+
+/* Main hero image — full natural aspect ratio */
+.listing-hero {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.listing-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+    border: 1px solid #eee;
     cursor: pointer;
 }
 
-.card-gallery img:hover {
-    transform: scale(1.02);
-    opacity: 0.9;
+/* Masonry gallery below hero on listing page */
+.listing-images .masonry-gallery {
+    column-count: 3;
+    column-gap: 8px;
+    margin-top: 8px;
 }
 
-/* --- 7. Masonry Gallery --- */
+.listing-images .masonry-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 8px;
+    break-inside: avoid;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.listing-images .masonry-gallery img:hover { opacity: 0.85; }
+
+/* Right column: listing info */
+.listing-info {
+    position: sticky;
+    top: 80px; /* clears the sticky header */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.listing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.listing-header h1 {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.listing-price {
+    font-size: 20px;
+    color: #444;
+    letter-spacing: 1px;
+}
+
+.listing-materials {
+    font-size: 13px;
+    color: #999;
+    font-style: italic;
+}
+
+/* Specs table */
+.listing-specs {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 12px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.spec-label {
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-size: 11px;
+}
+
+.spec-value { color: #333; }
+
+/* Description */
+.listing-description {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Enquire button */
+.enquire-btn {
+    display: block;
+    text-align: center;
+    background: #222;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    transition: background 0.2s ease;
+}
+
+.enquire-btn:hover { background: #444; }
+
+/* ================================
+   MASONRY GALLERY (shared)
+   ================================ */
 .masonry-gallery {
-    column-count: 5;
-    column-gap: 10px;
+    column-count: 4;
+    column-gap: 8px;
 }
 
-/* cursor already handled here in CSS */
 .masonry-gallery img {
     width: 100%;
     height: auto;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     break-inside: avoid;
     border: 1px solid #eee;
     border-radius: 4px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
     cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .masonry-gallery img:hover {
@@ -184,57 +348,41 @@ nav a {
     opacity: 0.9;
 }
 
-/* Responsive breakpoints */
-@media (max-width: 1024px) {
-    .masonry-gallery {
-        column-count: 3;
-    }
-}
-
-@media (max-width: 768px) {
-    .masonry-gallery {
-        column-count: 2;
-        column-gap: 10px;
-    }
-    .masonry-gallery img {
-        margin-bottom: 10px;
-    }
-}
-
-/* --- 8. Lightbox --- */
+/* ================================
+   LIGHTBOX
+   ================================ */
 .lightbox {
     display: none;
     position: fixed;
     z-index: 2000;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0,0,0,0.92);
     justify-content: center;
     align-items: center;
 }
+
 .lightbox.active { display: flex; }
 .lightbox-content { max-width: 90%; max-height: 90%; object-fit: contain; }
 .close { position: absolute; top: 15px; right: 35px; color: #fff; font-size: 40px; cursor: pointer; }
 
-/* --- 9. Social Icons --- */
-/* FIXED: Removed stray bare word 'CSS' that was breaking all rules below it */
+/* ================================
+   SOCIAL ICONS & FOOTER
+   ================================ */
 .social-container {
     display: flex;
     gap: 80px;
     justify-content: center;
-    padding: 80px 0;
+    padding: 40px 0 0;
 }
 
 .social-container a {
-    color: #333;
-    transition: opacity 0.2s ease;
+    color: #aaa;
+    transition: color 0.2s ease;
     text-decoration: none;
 }
 
-.social-container a:hover {
-    opacity: 0.7;
-}
+.social-container a:hover { color: #fff; }
 
-/* --- 10. Footer --- */
 footer {
     background: #111;
     color: #aaa;
@@ -243,5 +391,68 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
+}
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+@media (max-width: 1024px) {
+    .listing-layout {
+        grid-template-columns: 1fr 320px;
+        gap: 32px;
+    }
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 8px;
+        align-items: center;
+        gap: 5px;
+    }
+    .logo { margin-left: 0; padding-left: 0; }
+    .logo img { height: 30px; width: 30px; }
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-left: 0;
+    }
+    nav a {
+        margin-left: 0;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    /* Grid: 2 columns on tablet/mobile */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    /* Listing: stack to single column */
+    .listing-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .listing-info {
+        position: static;
+    }
+
+    .listing-images .masonry-gallery {
+        column-count: 2;
+    }
+
+    .masonry-gallery { column-count: 2; }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
 }

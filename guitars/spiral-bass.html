@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiral Bass — Hartsuiker Guitars</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+    <a href="../index.html" class="logo">
+        <img src="../logo.png" alt="Hartsuiker Guitars">
+    </a>
+    <nav>
+        <a href="../index.html#about">Philosophy</a>
+        <a href="../index.html#guitars">Guitars</a>
+        <a href="../index.html#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="listing-page">
+
+    <a class="back-link" href="../index.html#guitars">← Back to Guitars</a>
+
+    <div class="listing-layout">
+
+        <div class="listing-images">
+            <div class="listing-hero">
+                <img src="../images/swirlbass/swirlbass_0000.avif" alt="Spiral Bass Front" id="main-image">
+            </div>
+            <div class="masonry-gallery">
+                <img src="../images/swirlbass/swirlbasscloseupbody.webp" alt="Front Close Up" loading="lazy">
+                <img src="../images/swirlbass/swirlbass_0000.avif" alt="Front" loading="lazy">
+                <img src="../images/swirlbass/swirlbass_0001.avif" alt="Work Desk" loading="lazy">
+                <img src="../images/swirlbass/swirlbass_0003.avif" alt="Neck Blocks" loading="lazy">
+                <img src="../images/swirlbass/swirlbass_0004.avif" alt="Inlay Under Lamp" loading="lazy">
+                <img src="../images/swirlbass/swirlbass_0005.avif" alt="Inlay Under Lamp" loading="lazy">
+                <img src="../images/swirlbass/swirlbass_0006.avif" alt="Neck Inlay Carving Wide" loading="lazy">
+                <img src="../images/swirlbass/swirlbass_0007.avif" alt="Neck Inlay Carving" loading="lazy">
+                <img src="../images/swirlbass/swirlbass_0008.avif" alt="Neck Inlays" loading="lazy">
+                <img src="../images/swirlbass/swirlbass_0009.avif" alt="Unfinished Scratchplate" loading="lazy">
+                <img src="../images/swirlbass/swirlbass_0010.avif" alt="Full Back Unfinished" loading="lazy">
+                <img src="../images/swirlbass/swirlbass_0011.avif" alt="Fretboard Inlay Work Shot" loading="lazy">
+            </div>
+        </div>
+
+        <div class="listing-info">
+            <div class="listing-header">
+                <h1>Spiral Bass</h1>
+                <span class="status-badge for-sale">For Sale</span>
+            </div>
+            <p class="listing-price">R 25,000</p>
+            <p class="listing-materials">Reclaimed Wood throughout · Natural Shellac Finish</p>
+
+            <div class="listing-specs">
+                <div class="spec-row"><span class="spec-label">Body</span><span class="spec-value">Reclaimed Wood</span></div>
+                <div class="spec-row"><span class="spec-label">Neck</span><span class="spec-value">Multi-laminate Reclaimed</span></div>
+                <div class="spec-row"><span class="spec-label">Pickups</span><span class="spec-value">Split-coil</span></div>
+                <div class="spec-row"><span class="spec-label">Finish</span><span class="spec-value">Natural Shellac</span></div>
+            </div>
+
+            <div class="listing-description">
+                <p>A custom solid-body bass featuring hand-carved ergonomic scrolls, a multi-laminate neck, and a split-coil configuration. Made entirely from reclaimed wood.</p>
+            </div>
+
+            <a class="enquire-btn" href="mailto:hartsuikerguitar@gmail.com?subject=Enquiry: Spiral Bass">
+                Enquire about this guitar
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" alt="">
+</div>
+
+<footer id="contact">
+    <p>For inquiries about builds, setups or repairs contact:</p>
+    <p><strong>Oscar Hartsuiker</strong></p>
+    <p><strong>066 498 6343</strong></p>
+    <p><strong>hartsuikerguitar@gmail.com</strong></p>
+    <div class="social-container">
+        <a href="https://www.facebook.com/profile.php?id=61582473382094" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+        <a href="https://www.instagram.com/hartsuiker_guitar/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+    </div>
+</footer>
+
+<script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    function imgClickHandler() {
+        lightbox.classList.add('active');
+        lightboxImg.src = this.src;
+        lightboxImg.alt = this.alt;
+    }
+
+    document.querySelectorAll('.masonry-gallery img, .listing-hero img').forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', imgClickHandler);
+    });
+
+    document.querySelector('.close').addEventListener('click', () => lightbox.classList.remove('active'));
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('active'); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lightbox.classList.remove('active'); });
+</script>
+
+</body>
+</html>
