@@ -148,6 +148,20 @@
         if (e.key === 'ArrowRight') showNext();
         if (e.key === 'ArrowLeft') showPrev();
     });
+    // Swipe support
+    let touchStartX = 0;
+
+    lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    });
+
+    lightbox.addEventListener('touchend', (e) => {
+    const diff = touchStartX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 40) {  // 40px threshold to avoid accidental swipes
+        if (diff > 0) showNext();
+        else showPrev();
+    }
+    });
 </script>
 
 </body>

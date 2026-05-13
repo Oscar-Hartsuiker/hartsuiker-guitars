@@ -50,7 +50,7 @@
                 <h1>Spiral Bass</h1>
                 <span class="status-badge for-sale">For Sale</span>
             </div>
-            <p class="listing-price">POA</p>
+            <p class="listing-price">R 25,000</p>
             <p class="listing-materials">Reclaimed Wood throughout · Natural Shellac Finish</p>
 
             <div class="listing-specs">
@@ -136,6 +136,20 @@
         if (e.key === 'Escape') closeLightbox();
         if (e.key === 'ArrowRight') showNext();
         if (e.key === 'ArrowLeft') showPrev();
+    });
+    // Swipe support
+    let touchStartX = 0;
+
+    lightbox.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    });
+
+    lightbox.addEventListener('touchend', (e) => {
+    const diff = touchStartX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 40) {  // 40px threshold to avoid accidental swipes
+        if (diff > 0) showNext();
+        else showPrev();
+    }
     });
 </script>
 
