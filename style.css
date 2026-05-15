@@ -73,29 +73,6 @@ nav a {
     align-items: center;
     color: #fff;
     text-align: center;
-
-}
-.hero-content {
-    padding: 0px 0 0px 0%;
-    text-align: left;
-}
-
-#hero h1 {
-    font-size: 40px;
-
-    /* Option 1: thicker text shadow */
-    text-shadow: 0 2px 20px rgba(0,0,0,0.8);
-
-    /* Option 2: heavier font weight */
-    font-weight: 700;
-
-    /* Option 3: slight letter spacing for presence */
-    letter-spacing: 2px;
-   
-}
-}
-#hero p {
-    font-size: 16px;
 }
 
 /* --- Section Intro --- */
