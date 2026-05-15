@@ -65,7 +65,7 @@ nav a {
 /* --- Hero Section --- */
 #hero {
     width: 100%;
-    height: 90vh;
+    height: 95vh;
     padding: 0;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero.webp') center/cover scroll;
     display: flex;
@@ -73,29 +73,6 @@ nav a {
     align-items: center;
     color: #fff;
     text-align: center;
-
-}
-.hero-content {
-    padding: 0px 0 0px 0%;
-    text-align: center
-}
-
-#hero h1 {
-    font-size: 40px;
-
-    /* Option 1: thicker text shadow */
-    text-shadow: 0 2px 20px rgba(0,0,0,0.8);
-
-    /* Option 2: heavier font weight */
-    font-weight: 700;
-
-    /* Option 3: slight letter spacing for presence */
-    letter-spacing: 2px;
-   
-}
-}
-#hero p {
-    font-size: 16px;
 }
 
 /* --- Section Intro --- */
@@ -199,6 +176,7 @@ nav a {
     background: #bbb;
     color: #fff;
 }
+
 
 /* ================================
    LISTING PAGE (individual guitar)
