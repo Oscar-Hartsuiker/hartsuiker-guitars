@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>hartsuiker-guitars</title>
+		<link>http://localhost:1313/</link>
+		<description>Recent content on hartsuiker-guitars</description>
+		<generator>Hugo</generator>
+		<language>en-uk</language>
+		
+		
+		
+		
+			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Build OHT-26001</title>
+				<link>http://localhost:1313/guitars/oht-26001/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/guitars/oht-26001/</guid>
+				<description>&lt;p&gt;EYour description of OHT-26001 goes here.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Build OHT-26002</title>
+				<link>http://localhost:1313/guitars/oht-26002/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/guitars/oht-26002/</guid>
+				<description>&lt;p&gt;Your description of OHT-26002 goes here.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Spiral Bass</title>
+				<link>http://localhost:1313/guitars/spiral-bass/</link>
+				<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/guitars/spiral-bass/</guid>
+				<description>&lt;p&gt;A custom solid-body bass featuring hand-carved ergonomic scrolls, a multi-laminate neck, and a split-coil configuration. Made entirely from reclaimed wood with a natural shellac finish.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

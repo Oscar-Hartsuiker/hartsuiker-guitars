@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build OHT-26002 — Hartsuiker Guitars</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <a href="/" class="logo">
+        <img src="/logo.png" alt="Hartsuiker Guitars">
+    </a>
+    <nav>
+        <a href="/#about">Philosophy</a>
+        <a href="/#guitars">Guitars</a>
+        <a href="/#contact">Contact</a>
+    </nav>
+</header>
+
+
+<div class="listing-page">
+    <a class="back-link" href="/#guitars">← Back to Guitars</a>
+    <div class="listing-layout">
+        <div class="listing-images">
+            <div class="listing-hero">
+                <img src="/images/oht-26002/oht-26002-001.webp" alt="Build OHT-26002">
+            </div>
+            <div class="masonry-gallery">
+                
+                <img src="/images/oht-26002/oht-26002-001.webp" loading="lazy">
+                
+                <img src="/images/oht-26002/oht-26002-002.webp" loading="lazy">
+                
+                <img src="/images/oht-26002/oht-26002-003.webp" loading="lazy">
+                
+                <img src="/images/oht-26002/oht-26002-004.webp" loading="lazy">
+                
+                <img src="/images/oht-26002/oht-26002-005.webp" loading="lazy">
+                
+                <img src="/images/oht-26002/oht-26002-006.webp" loading="lazy">
+                
+                <img src="/images/oht-26002/oht-26002-007.webp" loading="lazy">
+                
+                <img src="/images/oht-26002/oht-26002-008.webp" loading="lazy">
+                
+                <img src="/images/oht-26002/oht-26002-009.webp" loading="lazy">
+                
+                <img src="/images/oht-26002/oht-26002-010.webp" loading="lazy">
+                
+            </div>
+        </div>
+        <div class="listing-info">
+            <div class="listing-header">
+                <h1>Build OHT-26002</h1>
+                <span class="status-badge for-sale">
+                    For Sale
+                </span>
+            </div>
+            <p class="listing-price">POA</p>
+            <p class="listing-materials"><em>Reclaimed Oregon Pine · Pau Marfim · Black Hardware</em></p>
+            <div class="listing-specs">
+                
+                <div class="spec-row">
+                    <span class="spec-label">Body</span>
+                    <span class="spec-value">Reclaimed Oregon Pine</span>
+                </div>
+                
+                <div class="spec-row">
+                    <span class="spec-label">Neck</span>
+                    <span class="spec-value">Pau Marfim</span>
+                </div>
+                
+                <div class="spec-row">
+                    <span class="spec-label">Hardware</span>
+                    <span class="spec-value">Black</span>
+                </div>
+                
+                <div class="spec-row">
+                    <span class="spec-label">Finish</span>
+                    <span class="spec-value">Natural Oil</span>
+                </div>
+                
+            </div>
+            <div class="listing-description">
+                <p>Your description of OHT-26002 goes here.</p>
+
+            </div>
+            <a class="enquire-btn" href="mailto:hartsuikerguitar@gmail.com?subject=Enquiry: Build%20OHT-26002">
+                Enquire about this guitar
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <button class="lightbox-prev">&#8592;</button>
+    <img class="lightbox-content" id="lightbox-img" alt="">
+    <button class="lightbox-next">&#8594;</button>
+    <div class="lightbox-counter" id="lightbox-counter"></div>
+</div>
+
+<script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const counter = document.getElementById('lightbox-counter');
+    let galleryImgs = [];
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+        currentIndex = index;
+        lightboxImg.src = galleryImgs[currentIndex].src;
+        lightboxImg.alt = galleryImgs[currentIndex].alt;
+        counter.textContent = (currentIndex + 1) + ' / ' + galleryImgs.length;
+        lightbox.classList.add('active');
+    }
+
+    function showNext() { currentIndex = (currentIndex + 1) % galleryImgs.length; openLightbox(currentIndex); }
+    function showPrev() { currentIndex = (currentIndex - 1 + galleryImgs.length) % galleryImgs.length; openLightbox(currentIndex); }
+    function closeLightbox() { lightbox.classList.remove('active'); }
+
+    galleryImgs = Array.from(document.querySelectorAll('.masonry-gallery img, .listing-hero img'));
+    galleryImgs.forEach((img, i) => { img.style.cursor = 'pointer'; img.addEventListener('click', () => openLightbox(i)); });
+
+    document.querySelector('.close').addEventListener('click', closeLightbox);
+    document.querySelector('.lightbox-prev').addEventListener('click', showPrev);
+    document.querySelector('.lightbox-next').addEventListener('click', showNext);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') showNext();
+        if (e.key === 'ArrowLeft') showPrev();
+    });
+
+    let touchStartX = 0;
+    lightbox.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; });
+    lightbox.addEventListener('touchend', (e) => {
+        const diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 40) { if (diff > 0) showNext(); else showPrev(); }
+    });
+</script>
+
+
+<footer id="contact">
+    <p>For inquiries about builds, setups or repairs contact:</p>
+    <p><strong>Oscar Hartsuiker</strong></p>
+    <p><strong>066 498 6343</strong></p>
+    <p><strong>hartsuikerguitar@gmail.com</strong></p>
+    <div class="social-container">
+        <a href="https://www.facebook.com/profile.php?id=61582473382094" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+        <a href="https://www.instagram.com/hartsuiker_guitar/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,3 @@
+baseURL = 'https://localhost:1313/'
+locale = 'en-uk'
+title = 'hartsuiker-guitars'
