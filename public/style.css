@@ -149,15 +149,16 @@ nav a {
     font-size: 40px;
     font-weight: 700;
     letter-spacing: 2px;
+    line-height: 1;
     text-shadow: 0 2px 20px rgba(0,0,0,0.8);
     border-bottom: 2px solid #fff;
-    padding-bottom: 10px;
+    padding-bottom: 6px;
     display: inline-block;
 }
 
 #hero p {
     font-size: 20px;
-    margin-top: 12px;
+    margin-top: 2px;
 }
 
 /* ================================
