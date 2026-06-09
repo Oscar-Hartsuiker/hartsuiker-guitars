@@ -19,8 +19,7 @@
         {{ range where .Site.RegularPages "Section" "guitars" }}
         <a class="product-thumb" href="{{ .Permalink }}">
             <div class="thumb-image">
-                <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" loading="lazy">
-            </div>
+               <img src="{{ .Params.thumb }}" alt="{{ .Title }}" loading="lazy">            </div>
             <div class="thumb-info">
                 <div class="thumb-top">
                     <h3>{{ .Title }}</h3>

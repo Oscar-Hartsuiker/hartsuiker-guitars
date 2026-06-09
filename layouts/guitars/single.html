@@ -7,7 +7,7 @@
                 <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}">
             </div>
             <div class="masonry-gallery">
-                {{ range .Params.images }}
+                {{ range after 1 .Params.images }}
                 <img src="{{ . }}" loading="lazy">
                 {{ end }}
             </div>
