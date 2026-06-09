@@ -1,6 +1,6 @@
 ---
 title: "Spiral Bass"
-price: "POA"
+price: "R20 000"
 status: "for-sale"
 materials: "Reclaimed Wood throughout · Natural Shellac Finish"
 specs:

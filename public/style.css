@@ -1,4 +1,63 @@
-/* --- Base Reset --- */
+/* ================================
+   COLOUR TOKENS
+   ================================ */
+:root {
+    /* Backgrounds */
+    --bg:              #ffffff;
+    --bg-secondary:    #f9f9f9;
+    --bg-tertiary:     #f5f5f5;
+
+    /* Text */
+    --text:            #222222;
+    --text-secondary:  #555555;
+    --text-muted:      #888888;
+    --text-faint:      #999999;
+
+    /* Borders */
+    --border:          #e5e5e5;
+    --border-light:    #eeeeee;
+
+    /* Accent (badge, button, etc) */
+    --accent:          #222222;
+    --accent-hover:    #444444;
+    --accent-text:     #ffffff;
+
+    /* Sold badge */
+    --sold-bg:         #bbbbbb;
+
+    /* Footer */
+    --footer-bg:       #111111;
+    --footer-text:     #aaaaaa;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg:              #111111;
+        --bg-secondary:    #1a1a1a;
+        --bg-tertiary:     #222222;
+
+        --text:            #dddddd;
+        --text-secondary:  #bbbbbb;
+        --text-muted:      #888888;
+        --text-faint:      #666666;
+
+        --border:          #333333;
+        --border-light:    #2a2a2a;
+
+        --accent:          #dddddd;
+        --accent-hover:    #ffffff;
+        --accent-text:     #111111;
+
+        --sold-bg:         #555555;
+
+        --footer-bg:       #0a0a0a;
+        --footer-text:     #666666;
+    }
+}
+
+/* ================================
+   BASE RESET
+   ================================ */
 * {
     margin: 0;
     padding: 0;
@@ -10,10 +69,13 @@ html { scroll-behavior: smooth; }
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    color: #222;
+    color: var(--text);
+    background: var(--bg);
 }
 
-/* --- Master Margin --- */
+/* ================================
+   MASTER MARGIN
+   ================================ */
 header,
 footer,
 section:not(#hero),
@@ -24,14 +86,16 @@ section:not(#hero),
 
 section { padding-top: 80px; padding-bottom: 80px; }
 
-/* --- Header & Logo --- */
+/* ================================
+   HEADER & LOGO
+   ================================ */
 header {
     display: flex;
     gap: 20px;
     justify-content: space-between;
     align-items: center;
-    background: #fff;
-    border-bottom: 1px solid #eee;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -55,36 +119,59 @@ header {
 
 nav a {
     text-decoration: none;
-    color: #222;
+    color: var(--text);
     margin-left: 45px;
     font-size: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* --- Hero Section --- */
+/* ================================
+   HERO
+   ================================ */
 #hero {
     width: 100%;
     height: 95vh;
     padding: 0;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero.webp') center/cover scroll;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-end;
     color: #fff;
-    text-align: center;
 }
 
-/* --- Section Intro --- */
+.hero-content {
+    padding: 0 0 60px 5%;
+    text-align: left;
+}
+
+#hero h1 {
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+#hero p {
+    font-size: 20px;
+    margin-top: 12px;
+}
+
+/* ================================
+   SECTION INTRO
+   ================================ */
 #guitars > p.section-intro {
     margin-top: 8px;
     margin-bottom: 40px;
-    color: #666;
+    color: var(--text-muted);
     font-size: 15px;
 }
 
 /* ================================
-   PRODUCT GRID (index page)
+   PRODUCT GRID
    ================================ */
 .product-grid {
     display: grid;
@@ -94,11 +181,11 @@ nav a {
 
 .product-thumb {
     text-decoration: none;
-    color: #222;
-    border: 1px solid #e5e5e5;
+    color: var(--text);
+    border: 1px solid var(--border);
     border-radius: 8px;
     overflow: hidden;
-    background: #fff;
+    background: var(--bg);
     transition: box-shadow 0.25s ease, transform 0.25s ease;
     display: block;
 }
@@ -108,12 +195,11 @@ nav a {
     transform: translateY(-3px);
 }
 
-/* Square thumbnail image */
 .thumb-image {
     width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    background: #f5f5f5;
+    background: var(--bg-tertiary);
 }
 
 .thumb-image img {
@@ -129,10 +215,9 @@ nav a {
     transform: scale(1.04);
 }
 
-/* Card info row */
 .thumb-info {
     padding: 14px 16px 16px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--border-light);
 }
 
 .thumb-top {
@@ -148,14 +233,21 @@ nav a {
     letter-spacing: 0.2px;
 }
 
+.thumb-arrow {
+    font-size: 18px;
+    color: var(--text-muted);
+}
+
 .price {
     font-size: 13px;
-    color: #888;
+    color: var(--text-muted);
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
-/* Status badge — shared by grid and listing */
+/* ================================
+   STATUS BADGE
+   ================================ */
 .status-badge {
     display: inline-block;
     font-size: 10px;
@@ -168,17 +260,17 @@ nav a {
 }
 
 .status-badge.for-sale {
-    background: #222;
-    color: #fff;
+    background: var(--accent);
+    color: var(--accent-text);
 }
 
 .status-badge.sold {
-    background: #bbb;
+    background: var(--sold-bg);
     color: #fff;
 }
 
 /* ================================
-   LISTING PAGE (individual guitar)
+   LISTING PAGE
    ================================ */
 .listing-page {
     padding-top: 40px;
@@ -188,16 +280,15 @@ nav a {
 .back-link {
     display: inline-block;
     font-size: 13px;
-    color: #888;
+    color: var(--text-muted);
     text-decoration: none;
     margin-bottom: 32px;
     letter-spacing: 0.3px;
     transition: color 0.2s ease;
 }
 
-.back-link:hover { color: #222; }
+.back-link:hover { color: var(--text); }
 
-/* Two-column layout: images left, info right */
 .listing-layout {
     display: grid;
     grid-template-columns: 1fr 380px;
@@ -205,7 +296,6 @@ nav a {
     align-items: start;
 }
 
-/* Main hero image — full natural aspect ratio */
 .listing-hero {
     width: 100%;
     margin-bottom: 12px;
@@ -216,11 +306,10 @@ nav a {
     height: auto;
     display: block;
     border-radius: 6px;
-    border: 1px solid #eee;
+    border: 1px solid var(--border-light);
     cursor: pointer;
 }
 
-/* Masonry gallery below hero on listing page */
 .listing-images .masonry-gallery {
     column-count: 3;
     column-gap: 8px;
@@ -233,7 +322,7 @@ nav a {
     display: block;
     margin-bottom: 8px;
     break-inside: avoid;
-    border: 1px solid #eee;
+    border: 1px solid var(--border-light);
     border-radius: 4px;
     cursor: pointer;
     transition: opacity 0.2s ease;
@@ -241,10 +330,9 @@ nav a {
 
 .listing-images .masonry-gallery img:hover { opacity: 0.85; }
 
-/* Right column: listing info */
 .listing-info {
     position: sticky;
-    top: 80px; /* clears the sticky header */
+    top: 80px;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -265,20 +353,19 @@ nav a {
 
 .listing-price {
     font-size: 20px;
-    color: #444;
+    color: var(--text-secondary);
     letter-spacing: 1px;
 }
 
 .listing-materials {
     font-size: 13px;
-    color: #999;
+    color: var(--text-faint);
     font-style: italic;
 }
 
-/* Specs table */
 .listing-specs {
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
     padding: 12px 0;
     display: flex;
     flex-direction: column;
@@ -292,27 +379,25 @@ nav a {
 }
 
 .spec-label {
-    color: #999;
+    color: var(--text-faint);
     text-transform: uppercase;
     letter-spacing: 0.8px;
     font-size: 11px;
 }
 
-.spec-value { color: #333; }
+.spec-value { color: var(--text-secondary); }
 
-/* Description */
 .listing-description {
     font-size: 14px;
-    color: #555;
+    color: var(--text-secondary);
     line-height: 1.7;
 }
 
-/* Enquire button */
 .enquire-btn {
     display: block;
     text-align: center;
-    background: #222;
-    color: #fff;
+    background: var(--accent);
+    color: var(--accent-text);
     text-decoration: none;
     padding: 14px 24px;
     border-radius: 6px;
@@ -321,10 +406,10 @@ nav a {
     transition: background 0.2s ease;
 }
 
-.enquire-btn:hover { background: #444; }
+.enquire-btn:hover { background: var(--accent-hover); }
 
 /* ================================
-   MASONRY GALLERY (shared)
+   MASONRY GALLERY
    ================================ */
 .masonry-gallery {
     column-count: 4;
@@ -337,7 +422,7 @@ nav a {
     display: block;
     margin-bottom: 8px;
     break-inside: avoid;
-    border: 1px solid #eee;
+    border: 1px solid var(--border-light);
     border-radius: 4px;
     cursor: pointer;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -365,7 +450,6 @@ nav a {
 .lightbox-content { max-width: 90%; max-height: 90vh; object-fit: contain; }
 .close { position: absolute; top: 15px; right: 35px; color: #fff; font-size: 40px; cursor: pointer; line-height: 1; }
 
-/* Prev / Next arrows */
 .lightbox-prev,
 .lightbox-next {
     position: absolute;
@@ -389,7 +473,6 @@ nav a {
 .lightbox-prev:hover,
 .lightbox-next:hover { background: rgba(255,255,255,0.25); }
 
-/* Image counter */
 .lightbox-counter {
     position: absolute;
     bottom: 20px;
@@ -411,7 +494,7 @@ nav a {
 }
 
 .social-container a {
-    color: #aaa;
+    color: var(--footer-text);
     transition: color 0.2s ease;
     text-decoration: none;
 }
@@ -419,8 +502,8 @@ nav a {
 .social-container a:hover { color: #fff; }
 
 footer {
-    background: #111;
-    color: #aaa;
+    background: var(--footer-bg);
+    color: var(--footer-text);
     text-align: center;
     padding: 80px 20px;
     display: flex;
@@ -428,13 +511,7 @@ footer {
     align-items: center;
     gap: 12px;
 }
-@media (max-width: 768px) {
-    .lightbox-prev,
-    .lightbox-next {
-        font-size: 18px;
-        padding: 10px 12px;
-    }
-}
+
 /* ================================
    RESPONSIVE
    ================================ */
@@ -468,32 +545,25 @@ footer {
         font-size: 10px;
         letter-spacing: 1px;
     }
-
-    /* Grid: 2 columns on tablet/mobile */
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
     }
-
-    /* Listing: stack to single column */
     .listing-layout {
         grid-template-columns: 1fr;
         gap: 32px;
     }
-
-    .listing-info {
-        position: static;
-    }
-
-    .listing-images .masonry-gallery {
-        column-count: 2;
-    }
-
+    .listing-info { position: static; }
+    .listing-images .masonry-gallery { column-count: 2; }
     .masonry-gallery { column-count: 2; }
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 18px;
+        padding: 10px 12px;
+    }
+    #hero h1 { font-size: 40px; }
 }
 
 @media (max-width: 480px) {
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
+    .product-grid { grid-template-columns: 1fr; }
 }
