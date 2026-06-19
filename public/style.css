@@ -142,7 +142,7 @@ nav a {
 
 .hero-content {
     padding: 0 0 60px 5%;
-    text-align: left;
+    text-align: center;
 }
 
 #hero h1 {
@@ -157,7 +157,7 @@ nav a {
 }
 
 #hero p {
-    font-size: 20px;
+    font-size: 19px;
     margin-top: 2px;
 }
 
