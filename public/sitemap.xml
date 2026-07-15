@@ -12,6 +12,8 @@
   </url><url>
     <loc>http://localhost:1313/</loc>
   </url><url>
+    <loc>http://localhost:1313/repairs/</loc>
+  </url><url>
     <loc>http://localhost:1313/guitars/spiral-bass/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>

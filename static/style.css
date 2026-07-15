@@ -490,7 +490,46 @@ nav a {
   transform: scale(1.02);
   opacity: 0.9;
 }
+/* ================================
+   REPAIRS & SETUPS PAGE 
+   ================================ */
+.repairs-page {
+  align-items: center;
+  padding: 2rem;
+  min-width: 100%;
+}
+.repairs-page table {
+  border: 1px solid #ffffff;
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1rem;
+  border: 2px;
+}
+.repairs-page thead,
+.repairs-page tbody,
+.repairs-page tr {
+  display: contents;
+}
+.repairs-page th,
+.repairs-page td {
+  border: 1px solid #ffffff;
+  padding: 8px 8px;
+}
+.repairs-page th {
+  width: 1fr;
+  color: var(--text-faint);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 500;
+}
 
+.repairs-page td:last-child {
+  color: var(--text-secondary);
+}
 /* ================================
    LIGHTBOX
    ================================ */
