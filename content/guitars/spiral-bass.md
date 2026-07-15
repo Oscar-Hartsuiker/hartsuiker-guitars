@@ -17,22 +17,22 @@ specs:
   - { label: "Bridge", value: "Brass 3 Saddle Ashtray" }
   - { label: "Hardware", value: "Chrome OEM" }
 images:
-  - /images/swirlbass/swirlbass_1004.avif
-  - /images/swirlbass/swirlbass_1002.avif
+  - /images/swirlbass/swirlbass_1004.webp
+  - /images/swirlbass/swirlbass_1002.webp
   - /images/swirlbass/swirlbasscloseupbody.webp
-  - /images/swirlbass/swirlbass_1003.avif
-  - /images/swirlbass/swirlbass_0000.avif
-  - /images/swirlbass/swirlbass_0001.avif
-  - /images/swirlbass/swirlbass_0003.avif
-  - /images/swirlbass/swirlbass_0004.avif
-  - /images/swirlbass/swirlbass_0005.avif
-  - /images/swirlbass/swirlbass_0006.avif
-  - /images/swirlbass/swirlbass_0007.avif
-  - /images/swirlbass/swirlbass_0008.avif
-  - /images/swirlbass/swirlbass_0009.avif
-  - /images/swirlbass/swirlbass_0010.avif
-  - /images/swirlbass/swirlbass_0011.avif
-  - /images/swirlbass/swirlbass_1001.avif
+  - /images/swirlbass/swirlbass_1003.webp
+  - /images/swirlbass/swirlbass_0000.webp
+  - /images/swirlbass/swirlbass_0001.webp
+  - /images/swirlbass/swirlbass_0003.webp
+  - /images/swirlbass/swirlbass_0004.webp
+  - /images/swirlbass/swirlbass_0005.webp
+  - /images/swirlbass/swirlbass_0006.webp
+  - /images/swirlbass/swirlbass_0007.webp
+  - /images/swirlbass/swirlbass_0008.webp
+  - /images/swirlbass/swirlbass_0009.webp
+  - /images/swirlbass/swirlbass_0010.webp
+  - /images/swirlbass/swirlbass_0011.webp
+  - /images/swirlbass/swirlbass_1001.webp
 ---
 
 > **Description** Looking for a bass with incredible character? This custom-built bass features a striking, highly figured "swirly" grain pattern that stands out on any stage. Built by hand with a focus on natural beauty and solid, punchy tone.
