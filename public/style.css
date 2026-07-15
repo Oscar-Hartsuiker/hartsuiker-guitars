@@ -493,30 +493,40 @@ nav a {
 /* ================================
    REPAIRS & SETUPS PAGE 
    ================================ */
+
 .repairs-page {
   align-items: center;
-  padding: 2rem;
-  min-width: 100%;
+  padding: 1rem;
+  padding: 4px;
+  margin: 4px;
+}
+.repairs-page h1,
+.repairs-page h2 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 .repairs-page table {
-  border: 1px solid #ffffff;
   display: grid;
   grid-template-columns: 4fr 2fr;
   width: 100%;
   padding-top: 1rem;
   padding-bottom: 1rem;
   font-size: 1rem;
-  border: 2px;
+  background-color: var(--bg-tertiary);
+  border-radius: 8px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .repairs-page thead,
 .repairs-page tbody,
 .repairs-page tr {
   display: contents;
+  text-align: left;
 }
 .repairs-page th,
 .repairs-page td {
-  border: 1px solid #ffffff;
   padding: 8px 8px;
+  border-bottom: 1px solid var(--border-light);
 }
 .repairs-page th {
   width: 1fr;
@@ -529,6 +539,12 @@ nav a {
 
 .repairs-page td:last-child {
   color: var(--text-secondary);
+}
+@media (min-width: 720px) {
+  .repairs-page {
+    margin: 8rem;
+    text-size-adjust: 4rem;
+  }
 }
 /* ================================
    LIGHTBOX
