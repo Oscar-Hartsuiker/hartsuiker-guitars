@@ -15,10 +15,12 @@
       <a href="/" class="logo">
         <img src="/logo.png" alt="Hartsuiker Guitars" />
       </a>
+
+      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
       <nav>
         <a href="/#about">Philosophy</a>
         <a href="/#guitars">Guitars</a>
-        <a href="/repairs/">Repairs</a>
+        <a href="/repairs/">Setups & Repairs</a>
         <a href="/#contact">Contact</a>
       </nav>
     </header>
@@ -77,3 +79,14 @@
     </footer>
   </body>
 </html>
+
+<script>
+  document.querySelector(".nav-toggle").addEventListener("click", () => {
+    document.querySelector("nav").classList.toggle("open");
+  });
+  document.querySelectorAll("nav a").forEach((link) => {
+    link.addEventListener("click", () => {
+      document.querySelector("nav").classList.remove("open");
+    });
+  });
+</script>
