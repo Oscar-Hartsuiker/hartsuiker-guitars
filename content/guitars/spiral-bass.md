@@ -12,9 +12,9 @@ specs:
   - { label: "Nut", value: "41 mm Bone" }
   - { label: "Scale Length", value: "800 mm (31.5 inch)" }
   - { label: "Fretboard", value: "Floorboards with Pau Mafim block inlays" }
-  - { label: "Fretboard Radius", value: "9-16 inch Compound " }
-  - { label: "Frets", value: " 21 Medium Nickel" }
-  - { label: "Bridge", value: "Brass 3 Saddle Ashtray" }
+  - { label: "Fretboard Radius", value: "18 inch" }
+  - { label: "Frets", value: " 24 Medium Jumbo Nickel" }
+  - { label: "Bridge", value: "4 Saddle Plate" }
   - { label: "Hardware", value: "Chrome OEM" }
 images:
   - /images/swirlbass/swirlbass_1004.webp
