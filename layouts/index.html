@@ -1,44 +1,66 @@
 {{ define "main" }}
 <section id="hero">
-    <div class="container">
-      <div class="left">
-         <h1 class="heading">Hartsuiker Guitars</h1>
-         <p class="desc">Handmade in Cape St Francis, South Africa. 
-      </p></div>
-      <div class="right">
-        <img src="hero.webp">
-      </div>
+  <div class="container">
+    <div class="left">
+      <h1 class="heading">Hartsuiker Guitars</h1>
+      <p class="desc">Cape St Francis, South Africa.</p>
     </div>
+    <div class="right">
+      <img src="hero.webp" />
+    </div>
+    <div class="button">
+      <a href="/repairs/">Repairs & Setups</a>
+      <a href="/#guitars">Custom Guitar Builds</a>
+    </div>
+  </div>
 </section>
 
 <section id="about">
-    <h2>Our Philosophy</h2>
-    <p>Hand-crafted in Cape St Francis, Hartsuiker Guitars focuses on functional minimalism. By utilizing reclaimed and sustainable, locally sourced timbers, we create instruments that prioritize tonal integrity and ergonomic comfort.</p>
-    <p>Every build is finished with natural oil or shellac to let the wood breathe and age naturally, paired with simple, high-quality electronics for a pure, direct signal path.</p>
+  <h2>Our Philosophy</h2>
+  <p>
+    Hand-crafted in Cape St Francis, Hartsuiker Guitars focuses on functional
+    minimalism. By utilizing reclaimed and sustainable, locally sourced timbers,
+    we create instruments that prioritize tonal integrity and ergonomic comfort.
+  </p>
+  <p>
+    Every build is finished with natural oil or shellac to let the wood breathe
+    and age naturally, paired with simple, high-quality electronics for a pure,
+    direct signal path.
+  </p>
 </section>
 
 <section id="guitars">
-    <h2>Guitars</h2>
-    <p class="section-intro">Each instrument is a one-of-a-kind build. Enquire for pricing and availability.</p>
-    <div class="product-grid">
-        {{ range where .Site.RegularPages "Section" "guitars" }}
-        <a class="product-thumb" href="{{ .Permalink }}">
-            <div class="thumb-image">
-               <img src="{{ .Params.thumb }}" alt="{{ .Title }}" loading="lazy">            </div>
-            <div class="thumb-info">
-                <div class="thumb-top">
-                    <h3>{{ .Title }}</h3>
-                    <span class="thumb-arrow">→</span>
-                </div>
-                <div style="display:flex; justify-content:space-between; align-items:center;">
-                    <span class="price">{{ .Params.price }}</span>
-                    <span class="status-badge {{ .Params.status }}">
-                        {{ if eq .Params.status "for-sale" }}For Sale{{ else }}Sold{{ end }}
-                    </span>
-                </div>
-            </div>
-        </a>
-        {{ end }}
-    </div>
+  <h2>Guitars</h2>
+  <p class="section-intro">
+    Each instrument is a one-of-a-kind build. Enquire for pricing and
+    availability.
+  </p>
+  <div class="product-grid">
+    {{ range where .Site.RegularPages "Section" "guitars" }}
+    <a class="product-thumb" href="{{ .Permalink }}">
+      <div class="thumb-image">
+        <img src="{{ .Params.thumb }}" alt="{{ .Title }}" loading="lazy" />
+      </div>
+      <div class="thumb-info">
+        <div class="thumb-top">
+          <h3>{{ .Title }}</h3>
+          <span class="thumb-arrow">→</span>
+        </div>
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <span class="price">{{ .Params.price }}</span>
+          <span class="status-badge {{ .Params.status }}">
+            {{ if eq .Params.status "for-sale" }}For Sale{{ else }}Sold{{ end }}
+          </span>
+        </div>
+      </div>
+    </a>
+    {{ end }}
+  </div>
 </section>
 {{ end }}

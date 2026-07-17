@@ -12,7 +12,7 @@ specs:
   - { label: "Nut", value: "41 mm Bone" }
   - { label: "Scale Length", value: "800 mm (31.5 inch)" }
   - { label: "Fretboard", value: "Floorboards with Pau Mafim block inlays" }
-  - { label: "Fretboard Radius", value: "18 inch" }
+  - { label: "Fretboard Radius", value: "18 http://localhost:1313inch" }
   - { label: "Frets", value: " 24 Medium Jumbo Nickel" }
   - { label: "Bridge", value: "4 Saddle Plate" }
   - { label: "Hardware", value: "Chrome OEM" }

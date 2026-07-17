@@ -46,8 +46,3 @@ A good setup makes a huge difference to playability. All setups include neck rel
 - Quotes are free and without obligation
 - Drop-off by arrangement in Cape St Francis
 - Courier welcome — contact me before sending
-
-## Contact
-
-hartsuikerguitar@gmail.com  
-066 498 6343
