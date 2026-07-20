@@ -188,13 +188,10 @@ nav a {
   min-height: 100svh;
   display: grid;
   place-items: center;
-  padding-bottom: 20px;
+  justify-content: center;
+  align-content: center;
 }
-#hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+
 #hero .container {
   margin-left: 8px;
   min-height: 100%;
@@ -220,7 +217,7 @@ nav a {
   display: flex;
   grid-area: right;
   justify-content: center;
-  align-items: center;
+  align-content: center;
 }
 #hero img {
   width: 95%;
@@ -234,12 +231,12 @@ nav a {
 
 #hero h1 {
   display: flex;
-  font-size: 20px;
+  font-size: 2em;
   text-transform: uppercase;
   justify-content: center;
   font-weight: 700;
   letter-spacing: 1px;
-  padding-bottom: 2px;
+  padding-bottom: 4px;
   align-items: center;
 }
 
