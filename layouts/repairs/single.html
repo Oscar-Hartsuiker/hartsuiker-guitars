@@ -2,5 +2,17 @@
 <section class="repairs-page">
   <h1>{{ .Title }}</h1>
   {{ .Content }}
+  <div class="contact-info">
+    <a
+      class="contact-links"
+      href="mailto:hartsuikerguitar@gmail.com?subject=Enquiry: {{ .Title }}"
+    >
+      Send an Email</a
+    >
+    <p>Or</p>
+    <a class="contact-links" href="https://wa.me/27664986343" target="_blank">
+      Chat on WhatsApp
+    </a>
+  </div>
 </section>
 {{ end }}
