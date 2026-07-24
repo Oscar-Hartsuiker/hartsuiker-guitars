@@ -11,6 +11,7 @@ A good setup makes a huge difference to playability. All setups include neck rel
 | Service               | Price |
 | --------------------- | ----- |
 | Electric guitar setup | R450  |
+| Acoustic guitar setup | R550  |
 | Bass guitar setup     | R500  |
 | Setup + restring      | R550  |
 
@@ -34,11 +35,11 @@ A good setup makes a huge difference to playability. All setups include neck rel
 
 ## Structural & Other
 
-| Service                 | Price        |
-| ----------------------- | ------------ |
-| Nut replacement         | R400 + parts |
-| Broken headstock repair | POA          |
-| General repairs         | POA          |
+| Service                 | Price             |
+| ----------------------- | ----------------- |
+| Nut replacement         | R400 + parts      |
+| Broken headstock repair | Contact for quote |
+| General repairs         | Contact for quote |
 
 ## Notes
 
